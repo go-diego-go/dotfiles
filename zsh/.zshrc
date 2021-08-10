@@ -31,7 +31,7 @@ zinit light zdharma/fast-syntax-highlighting
 zinit light MichaelAquilina/zsh-you-should-use
 zinit light unixorn/git-extra-commands
 zinit light StackExchange/blackbox
-# zinit light lukechilds/zsh-nvm
+zinit light lukechilds/zsh-nvm
 
 zinit ice from"gh-r" as"program"; zinit light junegunn/fzf-bin
 
@@ -52,3 +52,7 @@ bindkey -v
 
 zinit light zsh-users/zsh-syntax-highlighting
 
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /usr/local/bin/vault vault
