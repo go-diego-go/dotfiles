@@ -78,16 +78,16 @@ autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/local/bin/vault vault
 
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/diego/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/diego/google-cloud-sdk/path.zsh.inc'; fi
+if [ -f $HOME/google-cloud-sdk/path.zsh.inc ]; then . '${HOME}/google-cloud-sdk/path.zsh.inc'; fi
 
 export USE_GKE_GCLOUD_AUTH_PLUGIN=True
 
 # The next line enables shell command completion for gcloud.
-if [ -f '/Users/diego/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/diego/google-cloud-sdk/completion.zsh.inc'; fi
+if [ -f '${HOME}/google-cloud-sdk/completion.zsh.inc' ]; then . '${HOME}/google-cloud-sdk/completion.zsh.inc'; fi
 export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 
 # Fig post block. Keep at the bottom of this file.
 [[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
-source /Users/diego/.config/op/plugins.sh
+source ${HOME}/.config/op/plugins.sh
